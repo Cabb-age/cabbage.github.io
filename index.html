@@ -28,6 +28,22 @@
       font-size: 3rem;
     }
 
+    nav {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #0066cc;
+    }
+
     .section {
       max-width: 1000px;
       margin: 30px auto;
@@ -42,17 +58,33 @@
     }
 
     .card {
+      position: relative;
       background-color: #fff;
       border-radius: 12px;
       padding: 20px;
       width: 250px;
       box-shadow: 0 4px 6px rgba(0,0,0,0.1);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      overflow: hidden;
     }
 
     .card:hover {
-      transform: translateY(-1110px);
+      transform: translateY(-10px);
       box-shadow: 0 10px 15px rgba(0,0,0,0.2);
+    }
+
+    .card .detail {
+      opacity: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: opacity 0.3s ease, max-height 0.3s ease;
+      font-size: 0.9rem;
+      margin-top: 10px;
+    }
+
+    .card:hover .detail {
+      opacity: 1;
+      max-height: 200px;
     }
 
     a {
@@ -70,6 +102,18 @@
       padding-top: 20px;
       border-top: 1px solid #ccc;
     }
+
+    .about-container {
+      text-align: center;
+    }
+
+    .about-container img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+    }
   </style>
 </head>
 <body>
@@ -78,14 +122,45 @@
     <p>Welcome to my personal portfolio website</p>
   </header>
 
+  <nav>
+    <a href="#about">About Me</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experiences</a>
+    <a href="#resume">Resume</a>
+    <a href="#contacts">Contact</a>
+  </nav>
+
+  <section class="section" id="about">
+    <h2>About Me</h2>
+    <div class="about-container">
+      <img src="profile.jpg" alt="Profile Picture">
+      <p>Hello! I'm [Your Name], a passionate developer eager to build engaging and meaningful web applications. With a strong foundation in front-end and back-end technologies, I'm committed to continuous learning and innovation.</p>
+    </div>
+  </section>
+
   <section class="section" id="skills">
     <h2>Skills</h2>
     <div class="cards">
-      <div class="card">HTML & CSS</div>
-      <div class="card">JavaScript</div>
-      <div class="card">Python</div>
-      <div class="card">React</div>
-      <div class="card">SQL</div>
+      <div class="card">
+        HTML & CSS
+        <div class="detail">Creating responsive layouts, styling elements, and ensuring cross-browser compatibility.</div>
+      </div>
+      <div class="card">
+        JavaScript
+        <div class="detail">Building interactive UI components and dynamic client-side logic.</div>
+      </div>
+      <div class="card">
+        Python
+        <div class="detail">Writing backend logic, data processing, and scripting.</div>
+      </div>
+      <div class="card">
+        React
+        <div class="detail">Developing SPA with components, hooks, and state management.</div>
+      </div>
+      <div class="card">
+        SQL
+        <div class="detail">Designing relational databases, writing queries, and optimizing data access.</div>
+      </div>
     </div>
   </section>
 
